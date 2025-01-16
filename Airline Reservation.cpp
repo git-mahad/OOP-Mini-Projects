@@ -3,11 +3,9 @@
 #include <vector>
 #include <iomanip>
 #include <cstdlib>
-#include <unistd.h> // For sleep()
-
+#include <unistd.h> 
 using namespace std;
 
-// Flight class to represent a flight
 class Flight {
 private:
     int flightNumber;
@@ -66,7 +64,6 @@ public:
     }
 };
 
-// Reservation class to represent a reservation
 class Reservation {
 private:
     static int reservationIDCounter;
@@ -91,17 +88,14 @@ public:
     }
 };
 
-// Initialize the static variable
 int Reservation::reservationIDCounter = 1000;
 
-// FlightReservationSystem class to manage flights and reservations
 class FlightReservationSystem {
 private:
     vector<Flight> flights;
     vector<Reservation> reservations;
 
 public:
-    // Add sample flights
     void addSampleFlights() {
         flights.emplace_back(101, "New York", "10:00 AM", 50);
         flights.emplace_back(102, "Los Angeles", "12:30 PM", 60);
@@ -109,7 +103,6 @@ public:
         flights.emplace_back(104, "Miami", "6:45 PM", 30);
     }
 
-    // Display all flights
     void displayAllFlights() {
         system("CLS");
         if (flights.empty()) {
@@ -127,7 +120,6 @@ public:
         sleep(3);
     }
 
-    // Make a reservation
     void makeReservation() {
         system("CLS");
         if (flights.empty()) {
@@ -183,7 +175,6 @@ public:
         sleep(2);
     }
 
-    // Cancel a reservation
     void cancelReservation() {
         system("CLS");
         if (reservations.empty()) {
@@ -211,7 +202,6 @@ public:
         sleep(2);
     }
 
-    // Display all reservations
     void displayAllReservations() {
         system("CLS");
         if (reservations.empty()) {
@@ -228,7 +218,6 @@ public:
     }
 };
 
-// Main function
 int main() {
     FlightReservationSystem system;
     system.addSampleFlights();
