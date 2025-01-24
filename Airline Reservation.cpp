@@ -45,7 +45,6 @@ public:
     }
 };
 
-// Passenger class to represent a passenger
 class Passenger {
 private:
     string name;
